@@ -2,7 +2,7 @@
 
 <img src="./luke_zhang.jpeg" alt="Luke Zhang Profile" width="400">
 
-- Technical Member of Staff
+- Infra - Converts a given task to a proper AI or software pipeline. Validates code, implementations, github are up to assignment/company like standards.
 - Email: `lukelz.zhang@mail.utoronto.ca`
 
 
