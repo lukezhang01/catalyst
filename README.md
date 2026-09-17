@@ -1,5 +1,4 @@
-# COMPANY NAME
-
+# Catalyst
 ![Team Logo](./logo.png)
 
 #### Team Slack Channel: #team-catalyst
