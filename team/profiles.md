@@ -11,7 +11,7 @@
 - **Availability:** Avaliable from 12pm to 12am everyday.
 - **Backup Lead:** Luke Zhang 
 
-## Technical Member of Staff - Luke Zhang
+## Infra - Luke Zhang
 - **Summary:** Luke studies Computer Science and Statistics at the University of Toronto. His experience includes building backend services at iManage, improving AI model performance at Tenstorrent, and researching machine learning at the Vector Institute and Sunnybrook.
 - **GitHub:** [lukezhang01](https://github.com/lukezhang01)
 - **LinkedIn:** [Luke Zhang](https://www.linkedin.com/in/luke-zhang123)
