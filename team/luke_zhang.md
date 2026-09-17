@@ -1,6 +1,6 @@
 # Luke Zhang
 
-![Luke Zhang Profile](team/luke_zhang.jpeg)
+![Luke Zhang Profile](./luke_zhang.jpeg)
 
 - Technical Member of Staff
 - Email: `lukelz.zhang@mail.utoronto.ca`
