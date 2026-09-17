@@ -3,9 +3,9 @@
 
 ## Project board: GitHub Projects (Kanban)
 
-**Board:** [TODO: direct URL to the project board.]
+**Board:** [github repo](https://github.com/lukezhang01/catalyst) (it's private now)
 
-**Maintainer:** [TODO: member responsible for board upkeep.]
+**Maintainer:** Luke Zhang
 
 **Why this tool:** GitHub Projects keeps planning close to the repository's issues and pull requests. A shared Kanban board makes ownership, progress, and blockers visible.
 
@@ -19,9 +19,9 @@
 
 ## Communication platform: Slack
 
-**Workspace:** [TODO: workspace URL.]
+**Workspace:** `DCSIL-Fall2026` workplace
 
-**Team channel:** [TODO: channel name and direct URL.]
+**Team channel:** 491-team-catalyst
 
 **Why this tool:** Slack supports quick coordination, threaded discussion, and asynchronous updates between meetings.
 
