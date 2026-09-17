@@ -1,14 +1,14 @@
 # Member Profiles and Roles
 
 ## Project Lead - David Zhao
-- **Summary:** [TODO: 2–3 sentences about relevant experience, interests, and what this member brings to the project.]
-- **GitHub:** [TODO: profile URL.]
-- **LinkedIn:** [TODO: profile URL, or note if unavailable.]
+- **Summary:** Computer Science & Statistics student at the University of Toronto with experience in risk analytics, data analysis, and machine learning. Brings a structured, data-driven approach to project coordination, while helping the team turn ideas into practical and measurable solutions.
+- **GitHub:** [Zilong Zhao](https://github.com/Orggz)
+- **LinkedIn:** [Zilong Zhao](https://ca.linkedin.com/in/zilong-zhao-9b650b252)
 - **Project responsibilities:** Coordinate priorities and meetings, keep the project board current, follow up on blockers. Primary point of contact. 
-- **Creative role:** [TODO: a descriptive role such as Experience Architect or Research Storyteller, and how it contributes to the team.]
-- **Strengths:** [TODO: relevant technical and collaboration skills.]
-- **Learning goals:** [TODO: skills or domain knowledge to develop during the project.]
-- **Availability:** [TODO: typical collaboration windows and known constraints.]
+- **Creative role:** Data-Driven Strategist — Connects project goals with data and technical insights, helping the team translate ambiguous problems into actionable solutions.
+- **Strengths:** Python, SQL, data analysis, machine learning, risk modeling, problem solving, project coordination, and cross-functional communication.
+- **Learning goals:** Develop stronger product thinking, stakeholder communication, and experience translating data/AI ideas into user-focused solutions.
+- **Availability:** Avaliable from 12pm to 12am everyday.
 - **Backup Lead:** Luke Zhang 
 
 ## Technical Member of Staff - Luke Zhang
