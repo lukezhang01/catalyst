@@ -21,13 +21,13 @@
 - **Learning goals:** Turn research prototypes into a complete product and learn to improve features through user feedback.
 - **Availability:** Online avaliablity from 9am to 10pm every day, weekends included. In person availablity between 5pm to 9pm on weekdays, primiarly on campus. 
 
-## [Member name] - [Role]
+## Engineer - Olivia Yan
 
-- **Summary:** [TODO: 2–3 sentences about relevant experience, interests, and what this member brings to the project.]
-- **GitHub:** [TODO: profile URL.]
-- **LinkedIn:** [TODO: profile URL, or note if unavailable.]
-- **Project responsibilities:** [TODO: engineering, research, design, product, or other areas owned by this member.]
-- **Creative role:** [TODO: a descriptive role such as Experience Architect or Research Storyteller, and how it contributes to the team.]
-- **Strengths:** [TODO: relevant technical and collaboration skills.]
-- **Learning goals:** [TODO: skills or domain knowledge to develop during the project.]
-- **Availability:** [TODO: typical collaboration windows and known constraints.]
+- **Summary:** Olivia studies Computer Science at the University of Toronto with experience in Machine Learning, Computer Vision, and Computer Architecture. 
+- **GitHub:** [OliviaY1](https://github.com/OliviaY1)
+- **LinkedIn:** [Olivia Yan](https://www.linkedin.com/in/olivia-yan-a881ab263/)
+- **Project responsibilities:** Responsible for ML engineering and technical implementation, including developing AI/ML approaches, building data and inference pipelines, and turning research ideas into working product features
+- **Creative role:** Intelligence Builder. bridges ML research and product engineering by turning ideas about AI into practical systems.
+- **Strengths:** Strong background in machine learning and ML systems. Experienced in taking research ideas from experimentation to implementation, and comfortable working across research and engineering
+- **Learning goals:** Use AI knowledge to solve 1 real-world problem
+- **Availability:** Available from 10am to 12pm everyday, included weekends.
