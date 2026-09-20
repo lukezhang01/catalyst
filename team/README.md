@@ -1,5 +1,5 @@
 # Catalyst
-![Team Logo](./logo.png)
+![Team Logo](../logo.png)
 
 #### Team Slack Channel: #csc491--catalyst
 
