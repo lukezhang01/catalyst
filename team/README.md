@@ -1,16 +1,15 @@
-[COMPANY NAME Principles](./principles.md)
+# Catalyst
+![Team Logo](./logo.png)
 
-People at COMPANY NAME
+#### Team Slack Channel: #csc491--catalyst
+
+Catalyst is a company founded in the [THEME] industry. Catalyst aims to [VISION STATEMENT].
+
+
+
+Table of Contents
 ---
-
-- [Jane Doe, Engineering](./jane_doe.md)
-- ...
-
-### Team Leader
-
-[Jane Doe, Engineering](./jane_doe.md)
-<!-- Describe who and why the team leader was selected --> 
-
-#### Responsibilities
-<!-- What is their role for your team?	--> 
-- ...
+- [People](./profiles.md)
+- [Catalyst Principles](./principles.md)
+- [Tooling](./tooling.md)
+- [Diversity](./diversity.md)
