@@ -21,7 +21,7 @@
 
 **Workspace:** `DCSIL-Fall2026` workplace
 
-**Team channel:** 491-team-catalyst
+**Team channel:** 491--catalyst
 
 **Why this tool:** Slack supports quick coordination, threaded discussion, and asynchronous updates between meetings.
 
