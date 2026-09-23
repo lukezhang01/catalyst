@@ -1,0 +1,20 @@
+# Reflections on Team Principles Under Sprint Pressure
+
+Building a fully decoupled local MVP under tight sprint deadlines tested the strength of the core team principles established in Assignment 1. Pushing code quickly can easily lead to fragmented workflows, but leaning directly into our commitments around conflict resolution, accountability, and candid feedback kept our development structured and effective.
+
+### Principle 01: Disagree Openly, Commit Fully
+High-velocity engineering naturally creates friction around architecture and trade-offs. Early in the sprint, our primary disagreement centered on where to manage state and how to handle runtime dependencies. One side argued for building complex backend management endpoints in FastAPI (`main.py`, `store.py`) to prepare for cloud synchronization, while others pushed for a lightweight client-side architecture using React custom hooks (`useDualTimer.js`).
+
+In line with Principle 01, team members openly challenged each other's assumptions during setup. Proponents of client-side logic highlighted that non-technical users like Prof. John Doe would already face immense friction setting up local Python virtual environments (`venv`) and Node.js dependencies, making a complex backend setup even riskier. Because consensus could not be reached immediately, our Project Lead summarized the options against our immediate sprint constraints and made the executive call: keep active timer state localized on the frontend via custom hooks, but persist team roster selections to `session.json` via API calls. Once the decision was finalized, the entire team committed fully without lingering debate, allowing us to implement `Timer.jsx` and API integration within hours.
+
+### Principle 02: Own Your Commitments
+Operating on tight deadlines meant that individual delays could easily bottleneck the entire pipeline. All tasks—ranging from `chime.js` audio integration to the `AddTeamForm.jsx` UI layout—were tracked directly as active issues on our GitHub Project Board. 
+
+When the developer tasked with implementing team creation encountered CORS and state synchronization issues while building `AddTeamForm.jsx`, they raised the blocker early on the board rather than hiding it. Because problems are surfaced early and never personalized, the team immediately adjusted the plan. A second developer jumped in to pair-program on the component after observing in early CUJ testing that manual team-by-team entry was taking upwards of 15 minutes. By treating delays as operational adjustments rather than personal failures, we kept our deployment pipeline moving and met our release commitment.
+
+### Principle 03: Candid, Specific, Respectful
+Maintaining code quality during a rapid build requires continuous, honest critique. During code reviews for our frontend components, team members provided direct, actionable feedback on pull requests. For instance, initial implementations of the team drawing logic lacked visual distinction between called and waiting teams.
+
+Rather than glossing over the issue to meet a fast merge time, reviewers provided candid feedback: *"The current roster list doesn't update state clearly when a team is drawn; forcing the instructor to re-read through the sidebar mid-lecture adds unnecessary context switching."* Because the critique focused purely on user experience and code execution rather than individual competence, the author refactored the component immediately. Hiding this issue would have denied the author an opportunity to improve the UI and would have resulted in a flawed product during the CUJ audit.
+
+Ultimately, our A1 principles proved to be essential scaffolding. They allowed us to navigate architectural disagreements swiftly, own bottlenecks transparently, and deliver a clean, decoupled MVP without compromising team dynamics.
