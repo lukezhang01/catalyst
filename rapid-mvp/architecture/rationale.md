@@ -10,7 +10,7 @@ This describes the implemented system and its technical trade-offs. The [A2 CUJ]
 - The backend verifies the supplied token and uses a tenant/user identifier to select the user's saved setup in PostgreSQL. The production database provider and plan are not established by the repository and need team confirmation.
 - CORS restricts browser API access to the configured frontend origin. Runtime credentials remain in provider settings; deployment credentials are referenced through GitHub Secrets.
 
-User interactions and saved-setup requests are the application's **data flows**. Reviewed repository changes, GitHub Actions validation, Render deployment requests and Vercel publishing are **control flows**. The required diagram should distinguish these paths and the browser, identity provider, frontend host, API host and persistent database boundaries.
+User interactions and saved-setup requests are the application's **data flows**. Reviewed repository changes, GitHub Actions validation, Render deployment requests and Vercel publishing are **control flows**. The [draft diagram](diagram.png) distinguishes these paths and the browser, identity provider, frontend host, API host and persistent database boundaries. [Diagram notes](diagram-notes.md) identify its evidence and remaining questions.
 
 ## Immediate MVP choices
 

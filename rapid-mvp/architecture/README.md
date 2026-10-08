@@ -10,7 +10,7 @@ The Classroom Presentation Randomizer is a browser-based tool for instructors to
 
 | Artifact | Location and status |
 | --- | --- |
-| Cloud architecture diagram | **Missing from this repository.** Add the team's actual diagram using standard cloud iconography and formal data/control-flow notation. The sample under `/architecture/diagram.md` is not the application diagram. |
+| Cloud architecture diagram | [PNG](diagram.png), [SVG](diagram.svg), [editable diagrams.net source](diagram.drawio) — draft of verified logical topology, pending teammate confirmation; see [scope, notation and sources](diagram-notes.md) |
 | Architecture rationale | [rationale.md](rationale.md) — current topology, MVP trade-offs and proposed future evolution |
 | A2 feedback reflection | [reflections.md](reflections.md) — existing 532-word team reflection, preserved from the merged A3 documentation PR |
 | Deployment workflow explanation | [workflow.md](workflow.md) — trigger, configuration, execution, evidence and remaining verification |
@@ -22,7 +22,7 @@ The application workflow has been merged into its `main` branch. GitHub validati
 
 The [first main deployment run](https://github.com/OliviaY1/randomizer/actions/runs/37716917941) **failed before provider deployment** because all five required Actions settings were missing. The existing public app was reachable in the audit, but that does not establish a successful deployment through the new workflow. See [workflow.md](workflow.md).
 
-The diagram and successful deployment evidence must be added before describing this A3 snapshot as complete. [Issue #10](https://github.com/lukezhang01/catalyst/issues/10) tracks release preparation. Documentation changes require teammate review and merge before finalizing the release snapshot.
+The diagram requires teammate confirmation of the database hosting/network details, and successful deployment evidence is still needed before describing this A3 snapshot as complete. [Issue #10](https://github.com/lukezhang01/catalyst/issues/10) tracks release preparation. Documentation changes require teammate review and merge before finalizing the release snapshot.
 
 ## Submission
 
