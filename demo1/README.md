@@ -22,8 +22,3 @@ cd evidence-lender
 npm install
 npm run dev
 ```
-
-Then open:
-
-- Borrower application: http://localhost:3000/apply (upload a CSV from `samples/`)
-- Associate review: http://localhost:3000/review
