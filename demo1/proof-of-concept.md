@@ -1,80 +1,53 @@
-# Proof of Concept: TODO (product name)
+Proof of Concept: Evidence Lender
+1. What We're Proving
+Our bet is that bank transaction history can provide useful evidence of a borrower's repayment capacity, even when a conventional credit file is thin. For Assignment 4, we test three claims:
+1. Technical feasibility: an applicant uploads a bank statement CSV; the app extracts traceable cash-flow evidence, computes an experimental risk score when the data qualify, and lets a reviewer issue a decision.
+2. Architectural clarity: the frontend, API/application logic, statement parser, experimental model, and decision/pricing components have separate responsibilities.
+3. User viability: a borrower and reviewer can complete the primary journey. We document actual timings and friction in baseline-cuj.md once observed.
+The scope is deliberately narrower than automated underwriting: the model does not generate an approved amount or interest rate, and no credit report is analyzed yet.
+2. Why Cash Flow
+Credit history does not always fully describe current financial circumstances. Cash-flow evidence—such as recurring inflows, spending, account balances, and volatility—may provide additional context. Research from the CFPB and FinRegLab motivates this approach; it does not validate our model or establish that we outperform credit scores.
+3. Training Data and Model
+Our experimental cash-flow-only Logistic Regression model uses the historical Berka / PKDD'99 Czech banking dataset, which links bank transactions to loan outcomes. Although the original source contains 682 loans, our modeling sample is 233 completed loans (203 repaid, 30 not repaid) after filtering. We label completed status A = 0 and B = 1; ongoing statuses C and D are excluded. Features are calculated only from transactions before each loan's start date, over a 180-day window.
 
-## 1. What We're Proving
+The model extracts 18 numerical features, including inflows, outflows, monthly net cash flow, volatility, history coverage, transaction balances, and recent large inflows. Preprocessing and the fitted model were trained offline. The application uses exported model parameters with the same feature definitions, rather than retraining on every upload.
 
-Our bet: a borrower's bank transactions (cash flow) can predict default and drive a lending recommendation. We prove:
+We selected the cash-flow-only Logistic Regression using training-set 3-fold cross-validation (mean ROC-AUC 0.843). On a 59-loan holdout set with eight defaults, ROC-AUC was 0.757, average precision 0.418, and Brier score 0.177. The bootstrap ROC-AUC interval was approximately 0.581–0.912. These results are preliminary because the sample is small, historical, and unlike today's Canadian borrowers. The score is not a calibrated Canadian PD.
+4. System Topology
+See [`system-topology.jpg`](system-topology.jpg).
 
-1. **Technical feasibility:** a real bank CSV goes in, and a real probability of default (PD), interest rate, and loan amount come out.
-2. **Architectural clarity:** separate components with a clear data flow, so credit report data can be added later.
-3. **User viability:** users can finish the task (see `baseline-cuj.md`).
+Borrower UI (Next.js) → Node API → statement CSV parser and evidence extraction → experimental model (reviewer-facing) → human decision → borrower outcome. Pricing is a separate configuration-based module; application state is held in memory. The parser produces source-linked facts and states where information is missing or unverified. API boundaries keep the user interface separate from data processing and decisions. A future credit-report parser and jointly validated model could be added without replacing the whole borrower journey.
+5. Loan Terms and Pricing (Illustrative)
+The current prototype does not use a PD-based pricing formula. Its pricing configuration uses a fixed illustrative 24.9% APR over 18 months. A reviewer selects an amount within the configured limits and records a decision and reason. The app calculates corresponding monthly payment and total borrowing cost. It does not automatically approve borrowers or calculate a personalized rate from the experimental score. Future risk-based pricing would require validated PD estimates, loss assumptions, affordability checks, and legal review.
+6. Validation Scope
+Primary interaction: a borrower submits a bank statement CSV; the application displays extracted financial evidence to a reviewer; the reviewer accepts or declines with a written reason; the borrower can view the recorded outcome.
 
-## 2. Why Cash Flow
+Working means:
+1. Valid CSVs yield computed, source-linked financial facts; the experimental score appears only when its stricter input requirements are met.
+2. Malformed uploads receive a clear error rather than a fabricated result.
+3. Reviewer decisions and reasons are saved in application state and shown to the borrower.
+4. Different statement contents change the extracted facts; any model output comes from actual fitted parameters, not a hardcoded number.
+In scope now	Deferred
+Single-account CSV parsing and evidence review	Bank API verification and multi-account reconciliation
+Experimental cash-flow-only LR score for reviewers	Credit report analysis and validated combined PD
+Human reviewer decisions	Automated underwriting and personalized pricing
+Illustrative loan quote	Production security, persistence, and real lending
 
-- **CFPB (2023):** among people with similar credit scores, those with healthy cash flow were less likely to fall seriously behind on payments.
-- **FinRegLab (2019):** cash-flow-only models predicted default about as well as credit scores (AUC 0.59 to 0.73), and combining both did better. This is why we add the credit report next.
 
-## 3. Training Data: Berka (PKDD'99)
+Known limitations: statements are uploaded rather than independently verified; descriptions and balances are optional for evidence extraction, but the model needs sufficient dated transactions and balances. The historical model was trained in CZK and may behave misleadingly on CAD inputs. Applicants are not shown the experimental score. State is in memory; production-grade authentication, privacy, data retention, and lending compliance are not implemented. Live timing and full browser-to-browser validation remain to be recorded, not assumed successful.
+7. Pass Criteria and Evidence
+Claim	Pass if	Current evidence/status
+Technical feasibility	Valid CSV → review → recorded decision → borrower outcome, without placeholder core logic	Implemented in source; live end-to-end demo still to verify and capture
+Model functionality	Exported cash-flow model computes reproducible outputs from eligible statements	Fitted parameter export and historical holdout metrics documented; Canadian validity unproven
+Architectural clarity	Diagram agrees with actual UI/API/parser/model/decision boundaries	Diagram provided; verify against running system during demo
+User viability	Complete measured CUJ with timing, context switches, screenshots, and Go/No-Go thresholds	Pending actual test in baseline-cuj.md
 
-Real, anonymized Czech bank data: 682 loans (76 defaults) linked to about 1 million transactions. Default = loan status B or D.
 
-- We convert Berka transactions into our own 5-field CSV format, so the model only learns from what users upload.
-- Features only use transactions from before the loan started.
-- With few defaults, we use stratified 5-fold cross-validation.
-
-**Features:** average monthly inflow, outflow, and net cash flow; inflow volatility; share of months with negative cash flow; transactions per month; account history length.
-
-## 4. System Topology
-
-![System topology](demo1/system-topology.jpg)
-
-Each component talks to the next through a fixed input and output. Adding the credit report means adding a parser and retraining the model, while the frontend and pricing stay the same. Training and the live app share one feature extraction module.
-
-## 5. Pricing Formula (assumed)
-
-```
-rate        = 5% base + PD × 45% (loss if default) + 3% margin
-max_payment = avg monthly net cash flow / 1.25
-amount      = loan size whose 36-month payment equals max_payment
-```
-
-No offer if PD is above 20%. **Example:** PD of 5% gives a 10.25% rate. With $10,000/month net cash flow, the loan amount is about $247,000.
-
-## 6. Validation Scope
-
-**Primary interaction:** a user uploads a borrower's bank statement CSV and gets back a PD, a recommended interest rate, and a loan amount.
-
-**"Working" means:**
-
-1. The app computes features from the uploaded file itself. Nothing is mocked or hardcoded.
-2. It returns a PD, rate, and amount (or "no offer") within TODO seconds.
-3. Different files give different results.
-4. A malformed CSV shows an error instead of crashing.
-
-| In scope now | Deferred |
-|---|---|
-| Bank CSV (4-field or 5-field layout) | Using the credit report |
-| Logistic regression on cash flow | More complex models |
-| Fixed pricing formula | Calibrated pricing |
-| One file per request | Multiple accounts, reasons behind PD, scaling |
-
-**Accepted constraints and limitations:**
-
-- Only 4-field or 5-field CSVs, with at least TODO months of history.
-- The credit report upload button works, but the file isn't used yet.
-- The model is trained offline and loaded from a file. Requests run one at a time.
-- Berka is a proxy: personal accounts at a 1990s Czech bank, not businesses. We found no public business equivalent.
-- 76 defaults is a small sample, so AUC will be noisy.
-- Pricing parameters are assumptions, not calibrated to real loans.
-- Data handling and deployment: TODO.
-
-## 7. Pass Criteria
-
-| Claim | Pass if | Result |
-|---|---|---|
-| Technical feasibility | 10 held-out Berka accounts, exported as CSV, run end-to-end with no errors | TODO |
-| Model quality | Mean AUC of 0.60 or higher across 5 folds | TODO |
-| Architectural clarity | Diagram matches the running system | TODO |
-| User viability | Meets the targets in `baseline-cuj.md` | TODO |
+Go/No-Go: report the final result only after running the end-to-end demo and measuring the CUJ. A failed or unverified claim must be listed as a limitation, not counted as passed.
+Sources
+- CFPB — Credit scores only tell part of the story
+- FinRegLab — The Use of Cash-Flow Data in Underwriting Credit
+- Berka / PKDD'99 dataset
 
 ## Sources
 
