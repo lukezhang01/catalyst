@@ -7,9 +7,7 @@ This folder contains critical user journey & audit, proof of concept, and a demo
 - baseline critical user journey: [baseline-cuj.md](baseline-cuj.md)
 - system topology: [system-topology.jpg](system-topology.jpg)
 - proof of concept: [proof-of-concept.md](proof-of-concept.md)
-- live demo link: [live demo](TODO:)
-
-TODO: have a direct link to live url
+- live demo link: [borrower live demo](https://evidence-lender.vercel.app/apply) and [lender live demo](https://evidence-lender.vercel.app/review)
 
 
 ### how to setup demo locally
