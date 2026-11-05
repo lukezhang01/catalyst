@@ -3,7 +3,7 @@
 **Team:** catalyst
 **Product:** AI diligence agent. Associates on a due diligence team enter an investment thesis, the AI interviews customers and experts through a browser link, and an evidence scorecard shows which claims are supported, contradicted or unclear, with the quotes behind each verdict.
 
-**Live app:** [ADD DEPLOYED URL]
+**Live app:** [URL](https://diligence-frontend.dilligence-agent.workers.dev/)
 **Code repository:** https://github.com/OliviaY1/dilligence-agent
 **Release tag:** `v1.1.0-A5`
 
