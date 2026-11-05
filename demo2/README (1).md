@@ -5,7 +5,6 @@
 
 **Live app:** [URL](https://diligence-frontend.dilligence-agent.workers.dev/)
 **Code repository:** https://github.com/OliviaY1/dilligence-agent
-**Release tag:** `v1.1.0-A5`
 
 ## Artifacts
 
