@@ -2,21 +2,24 @@
 
 **Team:** catalyst
 **Trigger date:** 2026-11-05
-**Decision:** ☐ Persevere ☐ Pivot to fallback 1 ☐ Pivot to fallback 2 ☐ New hypothesis *(tick after testing)*
-
-> **To fill in after testing on 2026-11-05:** every `[ ]` below. Do not change the threshold from `pivot-contract.md`.
+**Decision:** ☐ Persevere ☑ Pivot to fallback 1 ☐ Pivot to fallback 2 ☐ New hypothesis
 
 ## 1. Did the features deliver the expected value?
 
 **Pivot contract result (F4 scorecard)**
 
+Test data: Maple Ridge Veterinary Group demo project, same 5 transcripts and 3 claims (Client Loyalty, Pricing Power, Vet Staffing) for every tester.
+
 | Tester | Time with scorecard | Under 10 min? | Verdicts matching manual (of 3) | Pass? |
 |---|---|---|---|---|
-| T1 | [ ] min | [ ] | [ ] / 3 | [ ] |
-| T2 | [ ] min | [ ] | [ ] / 3 | [ ] |
-| **Pass rate** | | | | **[ ]% (kill if < 70%)** |
+| T1 | 7.5 min | Yes | 3 / 3 | Yes |
+| T2 | 9.0 min | Yes | 2 / 3 | No |
+| T3 | 8.0 min | Yes | 3 / 3 | Yes |
+| **Pass rate** | | | | **67% (kill if < 70%) → violated** |
 
 Baseline: 20 minutes to read 5 transcripts and judge 3 claims by hand.
+
+**Speed passed easily** (average 8.2 min, 59% faster than baseline). **Accuracy failed** for one tester on one claim.
 
 **Other feature metrics**
 
@@ -47,6 +50,7 @@ We split each question into **demand** (do associates want this outcome?) and **
 - **F8 Phone calls.** Deprioritized because a browser link tests the same demand ("will people talk to an AI?") with no telephony setup. We learned that the link alone covers the core loop.
 - **F7 Report export.** Only matters if the scorecard is trusted, which is what the pivot contract tests. Building it first would have been premature.
 - **F9 Contact import and F10 sample mix check.** They reduce friction in a journey we haven't validated yet.
+- **F10 Sample mix check.** We deprioritized it as P2. The Pricing Power miss is exactly the failure it was meant to catch, so it moves up (see section 6).
 - **F5 click-through to the transcript.** Data is stored; UI moved to next sprint so the time went into making the scorecard update after every call.
 
 ## 4. What led to building before testing
@@ -64,4 +68,12 @@ We split each question into **demand** (do associates want this outcome?) and **
 
 ## 6. Decision
 
-[ ] *(Persevere / pivot to fallback 1 or 2 / new hypothesis with new threshold and trigger date, and why, based on the numbers above.)*
+**Pivot to Fallback 1: less automation, same problem.**
+
+The kill metric was violated (67% < 70%), so per our contract we pivot and do not lower the threshold. The data points to Fallback 1 rather than Fallback 2: demand for a per-claim summary held up (all testers were faster and said they'd use it), but trusting the AI's verdict led a tester to a wrong answer.
+
+**New hypothesis (Sprint 3):** If the scorecard groups verified quotes under each claim, labelled by interviewee type (current client, former client, expert), and the user sets the verdict themselves, users still finish at least 50% faster than baseline and match the manual verdict on all 3 claims.
+
+- **Kill metric:** fewer than 70% of testers (n ≥ 5) finish in under 10 minutes with all 3 verdicts matching.
+- **Trigger date:** 2026-11-19
+- **Build plan:** remove the AI status badge from the scorecard, add interviewee-type labels to each quote (the first part of F10), keep the server-side quote check.
