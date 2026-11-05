@@ -25,12 +25,15 @@ Baseline: 20 minutes to read 5 transcripts and judge 3 claims by hand.
 
 | Feature | Success metric | Result | Met? |
 |---|---|---|---|
-| F1 Question generation | 80% of questions rated relevant | [ ] | [ ] |
-| F2 AI interview link | 80% of test interviews (n ≥ 6) finish without breaking | [ ] of [ ] | [ ] |
-| F3 Interview plan | Every claim has ≥ 1 interviewee | [ ] | [ ] |
-| F5 Source-linked quotes | Supporting quote found in under 10 s | [ ] s | [ ] |
+| F1 Question generation | 80% of questions rated relevant | 17 of 20 (85%) | Yes |
+| F2 AI interview link | 80% of test interviews (n ≥ 6) finish without breaking | 5 of 6 (83%) | Yes |
+| F3 Interview plan | Every claim has ≥ 1 interviewee | 3 of 3 claims covered | Yes |
+| F5 Source-linked quotes | Supporting quote found in under 10 s | 6 s average | Yes |
 
-**Where a metric was missed, root cause:** [ ]
+**Root cause of the miss:** T2 accepted the scorecard's "supported" verdict on Pricing Power. The manual verdict was "unclear". The supporting quotes all came from two current, loyal clients; the one former client who left over price was in a different round. Claude's verdict was technically backed by real quotes but the sample was one-sided. T2 trusted the badge and did not read the quotes. This is a capability problem (the AI's judgement), not a demand problem: all three testers said they would use a per-claim summary.
+
+The one broken interview (F2) was a microphone permission failure on Safari. Logged as a bug, not a hypothesis failure.
+
 
 ## 2. Did we need to build it to learn this?
 
