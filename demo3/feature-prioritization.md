@@ -31,31 +31,32 @@ Groups A and B are the two competitors we ran with an identical journey. Group C
 
 ## 3. Performance Ratios
 
-| Metric | A. GLG + Excel | B. ChatGPT / Claude | Diligence Agent | Ratio |
-|---|---|---|---|---|
-| Time to 3 verdicts (5 transcripts) | 20 min (Demo 2 baseline) | [__] min | [__] min | [__]x vs A · [__]x vs B |
-| Steps / clicks to 3 verdicts | [__] | [__] | [__] | [__]x vs B |
-| Verdicts matching the manual verdict | 3 / 3 (is the reference) | [_] / 3 | [_] / 3 | — |
-| Quotes found word for word in a transcript | 100% (copied by hand) | [__]% | 100% by design | [__] pts vs B |
-| Steps to add a 6th interview | [__] | [__] | [__] | [__]x vs B |
-| Cost per interview | ~$1,000–1,500 per call (pub.) | Subscription; interviews not included | $[__] API spend | [__]x vs A |
-| Time to get first interview | 24 h to 1–2 weeks (pub.) | — (needs transcripts) | [__] h | [__]x vs A |
+| Metric | A. GLG + Excel | B. ChatGPT / Claude | Diligence Agent | Comparison |
+| --- | --- | --- | --- | --- |
+| Time to 3 verdicts (5 transcripts) | 20 min (Demo 2 baseline) | 6.0 min (sim.) | 5.5 min (sim.) | 3.64x faster than A; 1.09x faster than B |
+| Steps / clicks to 3 verdicts | 13 (sim.) | 5 (sim.) | 8 (sim.) | 1.60x as many steps as B |
+| Verdicts matching manual assessment | 3/3 (reference) | 2/3 (sim.) | 3/3 (sim.) | +1 correct verdict vs B |
+| Quotes found word for word | 100% (manual reference) | 85% (sim.) | 100% (design target) | +15 percentage points vs B |
+| Steps to add a 6th interview | 5 (sim.) | 4 (sim.) | 3 (sim.) | 25% fewer steps than B |
+| Cost per interview | ~$1,000–1,500 (pub.) | Subscription; interviews not included | $0.45 API spend (sim.) | ~2,222–3,333x lower API-only cost |
+| Time to first interview | 24 h to 1–2 weeks (pub.) | N/A; needs existing transcripts | 0.5 h (sim.) | Not directly comparable without equivalent sourcing |
 
 **How to run B:** a new chat, the same 5 transcripts, and one fixed prompt for every tester: *"Here is a thesis with 3 claims and 5 interview transcripts. For each claim, say supported, contradicted or unclear, and give the exact quotes that show it."* Then check every quote against the transcripts.
 
 ## 4. Feature Parity
 
+
 | Capability | A. GLG + Excel | B. ChatGPT / Claude | C. AI startups (pub.) | Us |
-|---|---|---|---|---|
-| Runs interviews | Human calls | No | Yes, AI voice interviews | Yes |
-| Finds interviewees | Yes | No | Yes (DiligenceSquared sources experts; Bridgetown partners with expert networks) | **No** |
-| Thesis → claims → verdict per claim | By hand | Only if prompted, not saved | Hypotheses and reports | **Yes, saved and editable** |
-| Quotes traced to the transcript | By hand | Not checked | Yes (DiligenceSquared: every insight linked to a transcript) | Yes, checked automatically |
-| Updates when a new interview arrives | By hand | Re-prompt | [__] | **Yes, automatically** |
-| Upload existing transcripts | — | Yes | [__] | Yes (new this sprint) |
-| Business knowledge beyond the transcripts | Associate's own | General model knowledge | Bridgetown starts from secondary research | **Not yet (RAG planned)** |
-| **Report export** | Excel / slides | Copy the answer | **Yes: diligence reports** | **No** |
-| Cost visible per project | Credits, often unclear | Flat subscription | ~$50K per project (DiligenceSquared, pub.) | Yes (new this sprint) |
+| --- | --- | --- | --- | --- |
+| Runs interviews | Human calls | No | AI voice interviews | Yes |
+| Finds interviewees | Yes | No | Some providers offer expert sourcing | No |
+| Thesis → claims → verdict per claim | By hand | Requires prompting | Hypotheses and reports | Yes, saved and editable |
+| Quotes traced to transcripts | By hand | Requires manual verification | Transcript-linked evidence offered by some providers | Yes, checked automatically |
+| Updates when new interview arrives | By hand | Re-prompt | Not verified | Yes, automatically |
+| Upload existing transcripts | — | Yes | Not verified across vendors | Yes |
+| Business knowledge beyond transcripts | Associate's own | General model knowledge | Bridgetown includes secondary research | Not yet (RAG planned) |
+| **Report export** | Excel / slides | Copy answer | Yes, diligence reports | **No** |
+| Cost visible per project | Credits, often unclear | Subscription | Pricing varies; ~$50K per project reported for DiligenceSquared | Yes |
 | Login and access control | Yes | Yes | Yes | **No** |
 
 ## 5. Critical vs. Acceptable Gaps
