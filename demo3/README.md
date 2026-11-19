@@ -29,6 +29,7 @@ Against the traditional workflow (expert calls + Excel) we are faster and cheape
 4. **Quote card.** Opening a claim shows its thesis sentence and every quote with its source.
 5. **Redesign.** One light theme across the app; projects grouped by status.
 6. **Automatic migrations.** The server applies database migrations on start.
+7. **Architecture Updates.** The frontend runs on Cloudflare Workers, with a Render backend and PostgreSQL database. Claude handles interview planning and thesis validation, while Boson AI provides real-time voice and transcription, with LiveKit supporting avatar video. To control API costs, audio streams directly between the interviewee's browser and Boson, and thesis validation only re-runs when the underlying inputs change. API usage is recorded per project to make operating costs visible. API keys remain on the backend, but user authentication and signed interview links are still planned for the next sprint.
 
 ## Known critical gaps (next sprint)
 
