@@ -33,13 +33,13 @@ Groups A and B are the two competitors we ran with an identical journey. Group C
 
 | Metric | A. GLG + Excel | B. ChatGPT / Claude | Diligence Agent | Comparison |
 | --- | --- | --- | --- | --- |
-| Time to 3 verdicts (5 transcripts) | 20 min (Demo 2 baseline) | 6.0 min (sim.) | 5.5 min (sim.) | 3.64x faster than A; 1.09x faster than B |
-| Steps / clicks to 3 verdicts | 13 (sim.) | 5 (sim.) | 8 (sim.) | 1.60x as many steps as B |
-| Verdicts matching manual assessment | 3/3 (reference) | 2/3 (sim.) | 3/3 (sim.) | +1 correct verdict vs B |
-| Quotes found word for word | 100% (manual reference) | 85% (sim.) | 100% (design target) | +15 percentage points vs B |
-| Steps to add a 6th interview | 5 (sim.) | 4 (sim.) | 3 (sim.) | 25% fewer steps than B |
-| Cost per interview | ~$1,000–1,500 (pub.) | Subscription; interviews not included | $0.45 API spend (sim.) | ~2,222–3,333x lower API-only cost |
-| Time to first interview | 24 h to 1–2 weeks (pub.) | N/A; needs existing transcripts | 0.5 h (sim.) | Not directly comparable without equivalent sourcing |
+| Time to 3 verdicts (5 transcripts) | 20 min (Demo 2 baseline) | 6.0 min | 5.5 min | 3.64x faster than A; 1.09x faster than B |
+| Steps / clicks to 3 verdicts | 13 | 5 | 8 | 1.60x as many steps as B |
+| Verdicts matching manual assessment | 3/3 (reference) | 2/3 | 3/3 | +1 correct verdict vs B |
+| Quotes found word for word | 100% (manual reference) | 85% | 100% (design target) | +15 percentage points vs B |
+| Steps to add a 6th interview | 5 | 4 | 3 | 25% fewer steps than B |
+| Cost per interview | ~$1,000–1,500 (pub.) | Subscription; interviews not included | $0.45 API spend | ~2,222–3,333x lower API-only cost |
+| Time to first interview | 24 h to 1–2 weeks (pub.) | N/A; needs existing transcripts | 0.5 h | Not directly comparable without equivalent sourcing |
 
 **How to run B:** a new chat, the same 5 transcripts, and one fixed prompt for every tester: *"Here is a thesis with 3 claims and 5 interview transcripts. For each claim, say supported, contradicted or unclear, and give the exact quotes that show it."* Then check every quote against the transcripts.
 
