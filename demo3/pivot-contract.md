@@ -2,7 +2,7 @@
 
 **Team:** catalyst
 **Written:** before sprint work began (see this file's commit date)
-**Carried over from Demo 2:** [Demo 2 decision: persevere / fallback 1 / fallback 2, in one line]
+**Carried over from Demo 2:** Persevere. Our core interview-to-scorecard workflow demonstrated initial value, so we continued developing the Diligence Agent while shifting our focus toward competitive benchmarking and differentiation.
 
 ## Context
 
