@@ -88,7 +88,7 @@ Groups A and B are the two competitors we ran with an identical journey. Group C
 | Feature | Decision | Gap it addresses | Owner | Status |
 |---|---|---|---|---|
 | **F11 Transcript upload** (.txt, .vtt, .srt, .md, Otter; confirm the interviewee) | **Add** | Lets us compete head-on with "paste into ChatGPT" | Olivia | Done |
-| **F12 API spend per project** | **Add** | Measures the cost advantage over expert calls | Olivia | Done |
+| **F12 API spend per project** | **Add** | Tracks Claude and Boson usage, including model calls, transcription, and avatar costs through the `api_usage` table | Olivia | Done |
 | **F13 Editable claims** | **Add** | The thesis is set up once and can change, unlike re-prompting | Luke | Done |
 | **F5 Quote card** (every quote and its source per claim) | **Finish** | Strengthens differentiation 2 | Olivia | Done |
 | Redesign (light theme, projects grouped by status) | **Modify** | Fewer steps to a verdict | Olivia | Done |
