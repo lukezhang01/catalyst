@@ -80,7 +80,7 @@ Groups A and B are the two competitors we ran with an identical journey. Group C
 ### Differentiation we emphasize
 
 1. **Thesis-first and persistent.** ChatGPT answers one prompt. We keep the thesis, claims and evidence together and update them as each interview arrives.
-2. **Every quote verified.** Our check drops any quote that isn't in the transcript word for word. With ChatGPT, the associate has to check each quote by hand ([__]% failed the check in our test).
+2. **Every quote verified.** Our check drops any quote that isn't in the transcript word for word. With ChatGPT, the associate has to check each quote by hand (15% failed the check in our test).
 3. **Interviews and synthesis in one place.** ChatGPT can't run the interview; GLG + Excel can't analyze it.
 
 ## 6. Strategic Feature Decisions
@@ -92,9 +92,9 @@ Groups A and B are the two competitors we ran with an identical journey. Group C
 | **F13 Editable claims** | **Add** | The thesis is set up once and can change, unlike re-prompting | Luke | Done |
 | **F5 Quote card** (every quote and its source per claim) | **Finish** | Strengthens differentiation 2 | Olivia | Done |
 | Redesign (light theme, projects grouped by status) | **Modify** | Fewer steps to a verdict | Olivia | Done |
-| **F7 Report export** (PDF / Excel) | **Next sprint** | Critical gap | TBD | Planned |
-| **F14 Business knowledge via RAG** | **Next sprint, test first** | Hypothesis: verdicts match the manual verdict more often than ChatGPT | TBD | Not built |
-| Login and signed links | Next sprint | Critical gap | TBD | Planned |
+| **F7 Report export** (PDF / Excel) | **Next sprint** | Critical gap | David | Planned |
+| **F14 Business knowledge via RAG** | **Next sprint, test first** | Hypothesis: verdicts match the manual verdict more often than ChatGPT | David | Not built |
+| Login and signed links | Next sprint | Critical gap | David | Planned |
 | Interviewee sourcing | **Omit** | Acceptable gap | — | Not planned |
 
 ## Sources (published competitor data)
