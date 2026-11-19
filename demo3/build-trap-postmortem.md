@@ -30,6 +30,8 @@ Testers: n = 4. Same 5 transcripts, same 3 claims, same prompt for ChatGPT/Claud
 
 The API spend page also provided a consistent way to track operating costs. In the example, the API cost was $0.45 per interview, substantially below the published cost of traditional expert calls. However, this comparison excludes interviewee sourcing, infrastructure, and other operating expenses.
 
+The updated architecture also supports cost efficiency. Audio and transcription are processed directly between the interviewee's browser and Boson, reducing backend bandwidth requirements. Claude Haiku is used for frequent live updates, while Opus handles more complex tasks. Thesis validation results are cached until the underlying inputs change, avoiding unnecessary API calls. Together, these design choices help control operating costs while maintaining the core interview and evidence synthesis workflow.
+
 **What did not work as well:** The Diligence Agent still required more setup steps than ChatGPT/Claude. The redesign reduced the illustrative Demo 2 workflow from 10 to 8 steps but did not eliminate the initial friction of creating projects and importing transcripts.
 
 Overall, the results suggest that the features improved the workflow, but the strongest potential benefit was structured and traceable evidence rather than a major speed improvement.
@@ -53,6 +55,8 @@ The results show a 15% quote mismatch rate for ChatGPT/Claude, above our 10% thr
 - **Report export.** AI diligence startups and Excel produce results that can be shared directly. Our application does not yet support report export. This remains a critical gap.
 - **AI startups.** DiligenceSquared, Bridgetown, AlphaSense AI Interviewer, and Tirro are B2B products, so we compared their features using public information only. We made no performance claims about them.
 - **Fully comparable interview costs.** Our API spend does not include sourcing, infrastructure, or operational expenses, so it is not a complete replacement-cost estimate for expert networks.
+- **Production-ready security.** Although API keys are stored on the backend and database access is restricted, the application does not yet provide user authentication or signed interview links. These remain critical adoption gaps.
+- **Complete cost accounting.** API usage is tracked per project, but some interview usage is reported by the browser, and pricing is based on manually maintained vendor rates. The spend dashboard is intended for monitoring rather than billing.
 
 ## 5. What led to building before testing
 
