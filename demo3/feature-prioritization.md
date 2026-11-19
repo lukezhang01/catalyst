@@ -104,4 +104,3 @@ Groups A and B are the two competitors we ran with an identical journey. Group C
 - DiligenceSquared (AI interviews, traceable reports, ~$50K per project): https://www.ycombinator.com/launches/Om9-diligencesquared-ai-powered-market-due-diligence-for-investment-decisions and https://techcrunch.com/2026/03/05/diligencesquared-uses-ai-voice-agents-to-make-ma-research-affordable/
 - Bridgetown Research (AI voice interviews through expert networks, first analysis in 24 h): https://techcrunch.com/2025/02/26/bridgetown-research-raises-19m-to-speed-up-due-diligence-with-ai
 - AlphaSense AI-led expert calls: https://help.alpha-sense.com/hc/en-us/articles/50627969088019-AI-Led-Expert-Calls-FAQs
-- Tirro: [add source]
